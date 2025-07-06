@@ -1,2 +1,5 @@
 Flask
 python-dotenv
+pytest
+requests
+flask-swagger-ui
