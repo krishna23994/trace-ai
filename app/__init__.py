@@ -2,6 +2,7 @@
 Trace-AI Flask Application Factory
 """
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 from flask_swagger_ui import get_swaggerui_blueprint
 import logging
 from app.config import Config
@@ -12,6 +13,7 @@ from app.swagger import swagger_config
 def create_app(config_class=Config):
     """Create Flask application instance"""
     app = Flask(__name__)
+    CORS(app)  # Enable CORS for all routes
     app.config.from_object(config_class)
     
     # Setup logging
